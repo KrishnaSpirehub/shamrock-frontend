@@ -27,8 +27,8 @@ export default function AchieveMediaSection({ achieveMediaSection }: any) {
         </div>
         <div className="bg-white relative w-full lg:col-span-2 md:col-span-2 col-span-5 h-64 md:h-full">
           <Image
-            src={achieveMediaSection && urlFor(achieveMediaSection?.achieveImage?.asset?._ref)}
-            //src="/images/achieve-net-zero.png"
+            // src={achieveMediaSection && urlFor(achieveMediaSection?.achieveImage?.asset?._ref)}
+            src="/images/achieve-net-zero.png"
             // width={500}
             // height={300}
             fill

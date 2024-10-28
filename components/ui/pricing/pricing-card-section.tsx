@@ -17,12 +17,109 @@ import { _trackEvent } from "@/lib/analytics";
 
 interface PricingCardSectionProps {
   className?: string;
-  pricingPageData: any; // Adjust the type as per your data structure
+  pricingPageDatas: any; // Adjust the type as per your data structure
 }
+
+const pricingPageData = {
+  cardButton: "Monthly",
+  cardButton1: "Yearly",
+  cardsMonthly: [
+    {
+      cardTitle: "Basic Plan",
+      cardPrice: "$75 USD/month",
+      cardDescription: "or $499 TTD billed monthly",
+      cardButton: "Get started",
+      cardPoints: [
+        { pointsDescription: "Access to all basic features" },
+        { pointsDescription: "Basic reporting, printable yearly" },
+        { pointsDescription: "1 property allowed" },
+        { pointsDescription: "1 user" },
+        { pointsDescription: "Training Manual" },
+        { pointsDescription: "Up to 5 years of data history" },
+      ],
+    },
+    {
+      cardTitle: "Standard Plan",
+      cardPrice: "$149 USD/month",
+      cardDescription: "or $999 TTD billed monthly",
+      cardButton: "Get started",
+      cardPoints: [
+        { pointsDescription: "Access to advanced reporting and industrial data fields" },
+        { pointsDescription: "Advanced reporting and analytics across multiple properties" },
+        { pointsDescription: "Up to 3 properties" },
+        { pointsDescription: "Up to 4 users" },
+        { pointsDescription: "Complimentary training session" },
+        { pointsDescription: "Priority email support" },
+        { pointsDescription: "Unlimited access to data history" },
+      ],
+    },
+    {
+      cardTitle: "Enterprise Plan",
+      cardPrice: "$299 USD/month",
+      cardDescription: "or $1 999 TTD billed monthly",
+      cardButton: "Get started",
+      cardPoints: [
+        { pointsDescription: "Access to advanced reporting and industrial data fields" },
+        { pointsDescription: "Advanced reporting and analytics across multiple properties" },
+        { pointsDescription: "Up to 10 properties" },
+        { pointsDescription: "Up to 12 users" },
+        { pointsDescription: "Complimentary training session" },
+        { pointsDescription: "Priority email support" },
+        { pointsDescription: "Unlimited access to data history" },
+      ],
+    },
+  ],
+  cardsYearly: [
+    {
+      cardTitle: "Basic Plan",
+      cardPrice: "$599 USD/year",
+      cardDescription: "or $3,999 TTD billed annually",
+      cardButton: "Get started",
+      cardPoints: [
+        { pointsDescription: "Access to all basic features" },
+        { pointsDescription: "Basic reporting, printable yearly" },
+        { pointsDescription: "1 property allowed" },
+        { pointsDescription: "1 user" },
+        { pointsDescription: "Training Manual" },
+        { pointsDescription: "Up to 5 years of data history" },
+      ],
+    },
+    {
+      cardTitle: "Standard Plan",
+      cardPrice: "$1,199 USD/year",
+      cardDescription: "or $7,999 TTD billed annually",
+      cardButton: "Get started",
+      cardPoints: [
+        { pointsDescription: "Access to advanced reporting and industrial data fields" },
+        { pointsDescription: "Advanced reporting and analytics across multiple properties" },
+        { pointsDescription: "Up to 3 properties" },
+        { pointsDescription: "Up to 4 users" },
+        { pointsDescription: "Complimentary training session" },
+        { pointsDescription: "Priority email support" },
+        { pointsDescription: "Unlimited access to data history" },
+      ],
+    },
+    {
+      cardTitle: "Enterprise Plan",
+      cardPrice: "$2,399 USD/year",
+      cardDescription: "or $15,999 TTD billed annually",
+      cardButton: "Get started",
+      cardPoints: [
+        { pointsDescription: "Access to advanced reporting and industrial data fields" },
+        { pointsDescription: "Advanced reporting and analytics across multiple properties" },
+        { pointsDescription: "Up to 10 properties" },
+        { pointsDescription: "Up to 12 users" },
+        { pointsDescription: "Complimentary training session" },
+        { pointsDescription: "Priority email support" },
+        { pointsDescription: "Unlimited access to data history" },
+      ],
+    },
+  ],
+};
 
 export function PricingCardSection({
   className,
-  pricingPageData,
+  pricingPageDatas,
   ...props
 }: PricingCardSectionProps) {
   return (

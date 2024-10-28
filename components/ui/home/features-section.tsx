@@ -8,7 +8,46 @@ const icons = [
   <Award key="award" className="h-6 w-6" />,
   <ThumbsUp key="thumbs-up" className="h-6 w-6" />,
 ];
-export default function FeaturesSection({ featureSection }: any) {
+
+const featureSection = {
+  featuresTitle: "Powerful Tools for Emission Management",
+  featuresBody:
+    "Track, Analyze, and Optimize. GHG Pro offers Professional-grade features for Streamlined Emission Reduction Strategies.",
+  features: [
+    {
+      featuresSubTitle: "Real-time Emission Tracking",
+      featuresSubBody:
+        "Track emissions instantaneously, gaining actionable insights for swift reduction strategies",
+    },
+    {
+      featuresSubTitle: "Customizable Reduction Plans",
+      featuresSubBody:
+        "Tailor plans to fit your goals, ensuring precision and efficiency in emissions reduction.",
+    },
+    {
+      featuresSubTitle: "Comprehensive Reporting & Analytics",
+      featuresSubBody:
+        "Access detailed reports and analytics, empowering informed decision-making for sustainability initiatives.",
+    },
+    {
+      featuresSubTitle: "Collaborative Team Integration",
+      featuresSubBody:
+        "Engage teams seamlessly, fostering collaboration for impactful collective emission reduction efforts",
+    },
+    {
+      featuresSubTitle: "Goal-driven Progress Monitoring",
+      featuresSubBody:
+        "Monitor progress towards targets, staying on course to achieve sustainable objectives effectively.",
+    },
+    {
+      featuresSubTitle: "Actionable Insights & Recommendations",
+      featuresSubBody:
+        "Receive actionable insights and suggestions, optimizing strategies for maximum environmental impact.",
+    },
+  ],
+};
+
+export default function FeaturesSection({ featureSections }: any) {
   return (
     <section className="sm:my-0 my-10 lg:-mb-[40px]" id="features">
       <div className="sm:w-[80%] w-[90%] m-auto py-10 md:py-20">

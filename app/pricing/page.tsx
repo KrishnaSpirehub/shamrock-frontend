@@ -19,8 +19,8 @@ export default async function Pricing() {
 
   return (
     <>
-      <PricingSection pricingPageData={pricingPageData} />
-      <PricingCardSection pricingPageData={pricingPageData} />
+      <PricingSection pricingPageDatas={pricingPageData} />
+      <PricingCardSection pricingPageDatas={pricingPageData} />
       <FaqSection pricingPageData={pricingPageData} />
       <ContactUsSection contactusPageData={pricingPageData} />
       <FooterSection footerPageData={pricingPageData} />

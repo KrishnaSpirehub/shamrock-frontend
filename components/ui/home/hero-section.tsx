@@ -41,14 +41,15 @@ export default function HeroSection({ homePageHeroSection }: any) {
             <div className="flex flex-col xs:flex-row max-w-sm items-center ">
               <Input
                 type="email"
-                className="rounded-b-none xs:rounded-l-md xs:rounded-r-none"
+                className="rounded-b-none xs:rounded-l-md xs:rounded-r-none sm:w-3/5 w-full"
                 placeholder="Enter your email"
               />
               <Button
                 type="submit"
-                className="text-white rounded-t-none xs:rounded-l-none  xs:rounded-r-md w-full"
+                className="text-white rounded-t-none xs:rounded-l-none  xs:rounded-r-md sm:w-2/5 w-full truncate"
                 style={{
                   background: "linear-gradient(90deg, #0097B2, #6FD162, #7CD858)",
+                  whiteSpace: "nowrap",
                 }}
               >
                 Get early access

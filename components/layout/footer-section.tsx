@@ -1,6 +1,10 @@
 import Container from "../ui/container";
 
-export default function FooterSection({ footerPageData }: any) {
+const footerPageData = {
+  footerTitle: "Copyright GHG Pro. All rights reserved.",
+};
+
+export default function FooterSection({ footerPageDatas }: any) {
   return (
     <section>
       <Container>

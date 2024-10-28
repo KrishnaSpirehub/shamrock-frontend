@@ -1,4 +1,10 @@
-export default function PricingSection({ pricingPageData }: any) {
+const pricingPageData = {
+  heroTitle: "Pricing",
+  heroSubTitle: "Simple, transparent pricing",
+  heroBody: "We believe GHGPro should be accessible to all companies, no matter the size.",
+};
+
+export default function PricingSection({ pricingPageDatas }: any) {
   return (
     <section
       style={{

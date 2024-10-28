@@ -6,7 +6,27 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-export default function FaqSection({ pricingPageData }: any) {
+const pricingPageData = {
+  faqTitle: "Frequently asked questions",
+  faqBody: "Everything you need to know about the payment and billing.",
+  faqs: [
+    {
+      question: "Is there a free trial available?",
+      answer: "A free 14 day demo is available through this link.",
+    },
+    {
+      question: "Can I change my plan later?",
+      answer: "Please contact support@ghgpro.com for assistance with this.",
+    },
+    {
+      question: "Is my data safe and private when using this service?",
+      answer:
+        "All data entered is secure and encrypted. Read our Privacy policy for more information.",
+    },
+  ],
+};
+
+export default function FaqSection({ pricingPageDatas }: any) {
   return (
     <section>
       <Container>

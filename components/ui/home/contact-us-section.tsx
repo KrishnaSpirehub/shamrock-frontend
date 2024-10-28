@@ -4,7 +4,21 @@ import { MapPin, Phone } from "lucide-react";
 import { toast } from "sonner";
 // import { toast } from "sonner";
 
-export default function ContactUsSection({ contactusPageData }: any) {
+const contactusPageData = {
+  footerContactusTitle: "Contact us",
+  getinTitle: "Get in touch",
+  getinDescription: "Chat to our friendly team.",
+  contactUsTitle: "Contact us",
+  contactUsDescription: "We're here to help.",
+  contactusTime: "Mon-Fri from 8am to 5pm.",
+  contactusEmail: "enquires@shamrock-hse.com",
+  contactusNumber: "+1-868-235-6082",
+  addressTitle: "Address",
+  addressDescription: "Our Office HQ.",
+  addressDetails: "Regus Level 2, Invaders Bay Tower, Port of Spain, Trinidad.",
+};
+
+export default function ContactUsSection({ contactusPageDatas }: any) {
   const copyToClipboard = (text: string) => {
     navigator.clipboard
       .writeText(text)

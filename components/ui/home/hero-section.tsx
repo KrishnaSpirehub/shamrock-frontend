@@ -8,24 +8,32 @@ import { useRouter } from "next/navigation";
 import { Input } from "../input";
 import axios from "axios";
 import { useState } from "react";
+import { toast } from "sonner";
 
 const builder = imageUrlBuilder(client);
 
 export default function HeroSection({ homePageHeroSection }: any) {
   const [email, setEmail] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const route = useRouter();
   function urlFor(source: string) {
     return builder.image(source);
   }
 
   const handleSubmit = () => {
+    setIsLoading(true);
     axios
-      .post("/api/users", email)
+      .post("/api/users", { email: email })
       .then((res) => {
-        console.log(res, "reasesees");
+        if (res?.data?.status === 200) {
+          toast.success(res?.data?.message);
+          setEmail("");
+          setIsLoading(false);
+        }
       })
       .catch((err) => {
-        console.log(err, "err");
+        toast.error(err?.message);
+        setIsLoading(false);
       });
   };
 
@@ -71,7 +79,7 @@ export default function HeroSection({ homePageHeroSection }: any) {
                   whiteSpace: "nowrap",
                 }}
               >
-                Get early access
+                {isLoading ? "Loading..." : "Get early access"}
               </Button>
             </div>
             <Button
@@ -79,6 +87,20 @@ export default function HeroSection({ homePageHeroSection }: any) {
               color="white"
               onClick={() => {
                 _trackEvent("demo clicked", { source: "hero" });
+                const newWindow = window.open("", "_blank");
+                if (newWindow && homePageHeroSection?.heroButtonURL) {
+                  newWindow.document.write(`
+                    <html>
+                      <body style="margin: 0;">
+                        <video controls autoplay muted style="width: 100%; height: 100%;">
+                          <source src="/video/GHGPro_teaser_video.Audio.mov" type="video/mp4">
+                          Your browser does not support the video tag.
+                        </video>
+                      </body>
+                    </html>
+                  `);
+                  newWindow.document.close();
+                }
               }}
             >
               <PlayCircle className="mr-2 h-4 w-4" />

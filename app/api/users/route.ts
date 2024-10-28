@@ -16,7 +16,7 @@ export async function POST(request: Request) {
     if (!email || !validateEmail(email)) {
       return NextResponse.json({
         status: 400,
-        message: "Wrong payload.",
+        message: "Please enter a valid email.",
         hint: "Ensure the email address is correctly formatted.",
       });
     }

@@ -6,14 +6,28 @@ import imageUrlBuilder from "@sanity/image-url";
 import { client } from "@/sanity/lib/client";
 import { useRouter } from "next/navigation";
 import { Input } from "../input";
+import axios from "axios";
+import { useState } from "react";
 
 const builder = imageUrlBuilder(client);
 
 export default function HeroSection({ homePageHeroSection }: any) {
+  const [email, setEmail] = useState("");
   const route = useRouter();
   function urlFor(source: string) {
     return builder.image(source);
   }
+
+  const handleSubmit = () => {
+    axios
+      .post("/api/users", email)
+      .then((res) => {
+        console.log(res, "reasesees");
+      })
+      .catch((err) => {
+        console.log(err, "err");
+      });
+  };
 
   return (
     <section
@@ -40,12 +54,17 @@ export default function HeroSection({ homePageHeroSection }: any) {
           <div className="mt-4 space-x-2 flex items-center sm:justify-start justify-center flex-col xs:flex-row gap-4 xs:gap-2">
             <div className="flex flex-col xs:flex-row max-w-sm items-center ">
               <Input
+                required
                 type="email"
-                className="rounded-b-none xs:rounded-l-md xs:rounded-r-none sm:w-3/5 w-full"
+                id="email"
                 placeholder="Enter your email"
+                className="rounded-b-none xs:rounded-l-md xs:rounded-r-none sm:w-3/5 w-full"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
               <Button
-                type="submit"
+                // type="submit"
+                onClick={handleSubmit}
                 className="text-white rounded-t-none xs:rounded-l-none  xs:rounded-r-md sm:w-2/5 w-full truncate"
                 style={{
                   background: "linear-gradient(90deg, #0097B2, #6FD162, #7CD858)",

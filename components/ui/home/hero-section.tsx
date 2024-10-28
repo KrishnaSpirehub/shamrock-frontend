@@ -21,20 +21,24 @@ export default function HeroSection({ homePageHeroSection }: any) {
   }
 
   const handleSubmit = () => {
-    setIsLoading(true);
-    axios
-      .post("/api/users", { email: email })
-      .then((res) => {
-        if (res?.data?.status === 200) {
-          toast.success(res?.data?.message);
-          setEmail("");
+    if (email) {
+      setIsLoading(true);
+      axios
+        .post("/api/users", { email: email })
+        .then((res) => {
+          console.log(res, "res");
+          if (res?.status === 200) {
+            toast.success(res?.data?.message);
+            setEmail("");
+            setIsLoading(false);
+          }
+        })
+        .catch((err) => {
+          console.log(err, "err");
+          toast.error(err?.message);
           setIsLoading(false);
-        }
-      })
-      .catch((err) => {
-        toast.error(err?.message);
-        setIsLoading(false);
-      });
+        });
+    }
   };
 
   return (

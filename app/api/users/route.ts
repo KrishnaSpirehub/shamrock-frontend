@@ -1,15 +1,23 @@
 import { createServerComponentClient } from "@/lib/server-supabase";
 import { NextResponse } from "next/server";
 
+const validateEmail = (email: any) => {
+  return String(email)
+    .toLowerCase()
+    .match(
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    );
+};
+
 export async function POST(request: Request) {
   try {
     const { email } = await request.json();
 
-    if (!email) {
+    if (!email || !validateEmail(email)) {
       return NextResponse.json({
         status: 400,
         message: "Wrong payload.",
-        hint: "May you forgot to pass the email?",
+        hint: "Ensure the email address is correctly formatted.",
       });
     }
 

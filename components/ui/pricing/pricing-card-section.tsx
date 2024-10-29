@@ -199,7 +199,7 @@ export function PricingCardSection({
                             </div>
                           </CardContent>
                         </div>
-                        <div className="mt-auto">
+                        {/* <div className="mt-auto">
                           <CardFooter>
                             <Button
                               asChild
@@ -213,7 +213,7 @@ export function PricingCardSection({
                               <Link href="/pricing">{data?.cardButton}</Link>
                             </Button>
                           </CardFooter>
-                        </div>
+                        </div> */}
                       </Card>
                     );
                   })}
@@ -275,7 +275,7 @@ export function PricingCardSection({
                             </div>
                           </CardContent>
                         </div>
-                        <div className="mt-auto">
+                        {/* <div className="mt-auto">
                           <CardFooter>
                             <Button
                               asChild
@@ -290,7 +290,7 @@ export function PricingCardSection({
                               <Link href="/pricing">{data?.cardButton}</Link>
                             </Button>
                           </CardFooter>
-                        </div>
+                        </div> */}
                       </Card>
                     );
                   })}

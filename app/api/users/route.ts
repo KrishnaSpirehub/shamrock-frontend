@@ -58,7 +58,7 @@ export async function POST(request: Request) {
 
     return NextResponse.json({
       status: 200,
-      message: "Your Email was added successfully",
+      message: " Your Email was added successfully. We’ll be in touch soon with your link for early access",
       data: insertData,
     });
   } catch (error) {

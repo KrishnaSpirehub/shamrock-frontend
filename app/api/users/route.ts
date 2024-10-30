@@ -58,7 +58,7 @@ export async function POST(request: Request) {
 
     return NextResponse.json({
       status: 200,
-      message: "User created successfully",
+      message: "Your Email was added successfully",
       data: insertData,
     });
   } catch (error) {

@@ -24,7 +24,7 @@ export async function POST(request: Request) {
     const supabase = createServerComponentClient();
 
     let { data: userData, error: userError } = await supabase
-      .from("users")
+      .from("demo_users")
       .select("*")
       .eq("email", email);
 
@@ -43,12 +43,10 @@ export async function POST(request: Request) {
     const newUser: any = {
       created_at: new Date(),
       email: email,
-      email_verified: true,
-      name: "Guest",
     };
 
     const { data: insertData, error: insertError } = await supabase
-      .from("users")
+      .from("demo_users")
       .insert(newUser)
       .select("*");
 
@@ -59,7 +57,7 @@ export async function POST(request: Request) {
     return NextResponse.json({
       status: 200,
       message:
-        " Your Email was added successfully. We’ll be in touch soon with your link for early access",
+        "Your Email was added successfully. We’ll be in touch soon with your link for early access",
       data: insertData,
     });
   } catch (error) {

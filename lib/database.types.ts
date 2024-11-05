@@ -3,30 +3,18 @@ export type Json = string | number | boolean | null | { [key: string]: Json | un
 export type Database = {
   public: {
     Tables: {
-      users: {
+      demo_users: {
         Row: {
           created_at: string | null;
           email: string | null;
-          email_verified: boolean | null;
-          last_active: string | null;
-          name: string | null;
-          user_id: string;
         };
         Insert: {
           created_at?: string | null;
           email?: string | null;
-          email_verified?: boolean | null;
-          last_active?: string | null;
-          name?: string | null;
-          user_id: string;
         };
         Update: {
           created_at?: string | null;
           email?: string | null;
-          email_verified?: boolean | null;
-          last_active?: string | null;
-          name?: string | null;
-          user_id?: string;
         };
         Relationships: [];
       };
